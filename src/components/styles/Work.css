@@ -1,0 +1,247 @@
+.work-section h2 {
+  margin-top: 40px;
+  font-size: 70px;
+  font-weight: 600;
+  font-family: 'Clash Display', sans-serif;
+}
+.work-section h2 > span {
+  color: var(--accentColor);
+}
+.work-section {
+  transition: 0s;
+  height: auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+  will-change: transform;
+  position: relative;
+  z-index: 2;
+  background-color: var(--backgroundColor);
+  /* Full-coverage pseudo-element ensures no gap below cards */
+}
+.work-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--backgroundColor);
+  z-index: -1;
+}
+.work-container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-content: stretch;
+}
+.work-flex {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  margin-left: -80px;
+  padding-right: 120px;
+  position: relative;
+}
+.work-box {
+  padding: 6vh 80px;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  box-sizing: border-box;
+  border-right: 1px solid #363636;
+  flex-shrink: 0;
+  gap: 4vh;
+  justify-content: start;
+}
+.work-flex .work-box:nth-child(even) {
+  flex-direction: column-reverse;
+}
+.work-flex::before,
+.work-flex::after {
+  content: "";
+  width: calc(50000vw);
+  height: 1px;
+  background-color: #363636;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+.work-flex::after {
+  top: 100%;
+}
+.work-title {
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.work-title > div {
+  text-align: right;
+}
+.work-title h3 {
+  font-size: 50px;
+  line-height: 50px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.work-info h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+.work-info p {
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  color: #adacac;
+  margin: 0;
+  margin-top: 3px;
+}
+.work-info > p {
+  width: 90%;
+}
+.work-image {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.work-image-in {
+  position: relative;
+}
+.work-link {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: var(--backgroundColor);
+  width: 50px;
+  border-radius: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.5),
+    inset 0px 0px 10px 0px #393939;
+  transition: 0.3s;
+  opacity: 0;
+}
+.work-image a:hover {
+  color: inherit;
+}
+.work-image a:hover .work-link {
+  opacity: 1;
+}
+.work-image video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  object-fit: cover;
+}
+.work-image img {
+  max-width: 100%;
+  max-height: 30vh;
+  object-fit: cover;
+  border-radius: 8px;
+}
+@media only screen and (max-height: 900px) {
+  .work-image img {
+    max-height: 25vh;
+  }
+  .work-box {
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    gap: 3vh;
+  }
+  .work-section h2 {
+    font-size: 55px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .work-title h3 {
+    font-size: 35px;
+  }
+  .work-info p {
+    font-size: 13px;
+    font-weight: bold;
+  }
+  .work-info h4 {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .work-box {
+    width: 450px;
+    padding: 5vh 50px;
+    gap: 4vh;
+  }
+  .work-flex {
+    margin-left: -50px;
+    padding-right: 75px;
+  }
+  .work-section h2 {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .work-box {
+    width: 350px;
+    padding: 4vh 30px;
+    gap: 3vh;
+  }
+  .work-flex {
+    margin-left: -30px;
+    padding-right: 45px;
+  }
+}
+
+@media only screen and (max-height: 650px) {
+  .work-image img {
+    max-height: 20vh;
+  }
+  .work-section h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+  .work-box {
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+    gap: 2vh;
+  }
+}
+/* @media only screen and (max-width: 900px) {
+  .work-image img {
+    max-height: 200px;
+  }
+  .work-section h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  .work-box {
+    gap: 20px;
+  }
+} */
+@media only screen and (max-width: 1025px) {
+  .work-container {
+    align-content: normal;
+  }
+  .work-flex {
+    flex: none;
+    height: auto;
+  }
+}
+
+/* ── Project description ── */
+.work-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px !important;
+  line-height: 19px !important;
+  font-weight: bold !important;
+  opacity: 0.7;
+  margin-top: 8px !important;
+}

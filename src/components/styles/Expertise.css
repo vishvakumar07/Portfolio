@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800;900&family=Space+Grotesk:wght@500;700&display=swap');
+
+.expertise-container {
+  background-color: #050505;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  z-index: 10;
+}
+
+/* Floating Radial Glow Orb in top-left */
+.glow-orb {
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 45vw;
+  height: 45vw;
+  max-width: 600px;
+  max-height: 600px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, rgba(126, 34, 206, 0.04) 50%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.expertise-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.expertise-content {
+  max-width: 1400px;
+  width: 100%;
+  padding-left: 8vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+
+/* Small Heading Above */
+.expertise-tag {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: clamp(0.9rem, 1.8vw, 1.15rem);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c2a4ff;
+  margin-bottom: 24px;
+  position: relative;
+  display: inline-block;
+  opacity: 0.85;
+}
+
+/* Purple Glow Behind Heading */
+.expertise-tag::after {
+  content: '';
+  position: absolute;
+  inset: -15px -30px;
+  background: radial-gradient(circle, rgba(194, 164, 255, 0.25) 0%, transparent 80%);
+  z-index: -1;
+  filter: blur(12px);
+}
+
+.text-overlap-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Background Large Text with Gradient */
+.expertise-bg-text {
+  font-family: 'Inter', 'Space Grotesk', sans-serif;
+  font-size: clamp(5.5rem, 11vw, 13rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.85;
+  margin: 0;
+  letter-spacing: -0.04em;
+  
+  /* Gradient text */
+  background: linear-gradient(180deg, #d8b4fe 0%, #a855f7 50%, #7e22ce 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  
+  opacity: 0.9;
+  user-select: none;
+}
+
+/* Foreground Overlay Text */
+.expertise-fg-text {
+  font-family: 'Inter', 'Space Grotesk', sans-serif;
+  font-size: clamp(2.8rem, 6vw, 6.5rem);
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 0;
+  position: absolute;
+  left: 0.3em; /* Slightly offset for premium overlay alignment */
+  top: 50%;
+  transform: translateY(-40%);
+  pointer-events: none;
+  z-index: 3;
+  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.95), 0 0 50px rgba(0, 0, 0, 0.7);
+  letter-spacing: -0.02em;
+}
+
+@media only screen and (max-width: 768px) {
+  .expertise-content {
+    padding-left: 5vw;
+  }
+  .expertise-fg-text {
+    left: 0.15em;
+  }
+}

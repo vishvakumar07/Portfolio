@@ -1,0 +1,146 @@
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  place-items: center;
+  position: relative;
+  opacity: 1;
+  height: auto;
+  width: var(--cWidth);
+  margin: auto;
+}
+.about-me {
+  padding: 50px 0px;
+  padding-bottom: 0;
+  width: 500px;
+  max-width: calc(100% - 15px);
+}
+.about-title {
+  font-size: 70px;
+  font-weight: 600;
+  font-family: 'Clash Display', sans-serif;
+  margin-bottom: 35px;
+  margin-top: 0;
+  line-height: 1.1;
+}
+.about-title span {
+  color: var(--accentColor);
+}
+
+.about-me p {
+  font-family: 'Inter', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 34px;
+  letter-spacing: 1px;
+}
+
+@media only screen and (min-width: 600px) {
+  .about-section {
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .about-me {
+    width: 500px;
+    max-width: calc(100% - 70px);
+    transform: translateY(0%);
+  }
+  .about-section {
+    opacity: 1;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .about-section {
+    width: var(--cWidth);
+    justify-content: right;
+    max-width: 1920px;
+    height: var(--vh);
+    padding: 0px;
+    opacity: 1;
+  }
+  .about-me {
+    padding: 0px;
+    width: 50%;
+  }
+  .about-me p {
+    font-size: 1.2vw;
+    line-height: 2.3vw;
+  }
+}
+@media only screen and (min-width: 1950px) {
+  .about-me p {
+    font-size: 2.5rem;
+    line-height: 2.7rem;
+  }
+}
+
+/* ── About Tags ── */
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+.about-tag {
+  font-family: 'Inter', sans-serif;
+  background: rgba(196, 129, 255, 0.12);
+  border: 1px solid rgba(196, 129, 255, 0.35);
+  color: #c481ff;
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+/* ── About Quick Info ── */
+.about-quick-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 30px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.about-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.info-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accentColor);
+  font-weight: bold;
+}
+.info-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Reduce paragraph size in about section */
+.about-me p.para {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px !important;
+  line-height: 26px !important;
+  font-weight: bold !important;
+  margin-bottom: 12px;
+  opacity: 0.85;
+}
+@media only screen and (min-width: 1025px) {
+  .about-me p.para {
+    font-size: 1.25vw !important;
+    line-height: 1.75vw !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .about-title {
+    font-size: 45px;
+    margin-bottom: 20px;
+  }
+}
